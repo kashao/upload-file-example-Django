@@ -1,0 +1,21 @@
+<!-- base.html -->
+{% extends "base.html" %}
+{% load static %}
+
+<div class="container">
+    <div class="card-body">
+        <div class="form-group">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="custom-file">
+                    {{ form.file.errors }}
+                    <label for="file" class="form-label">File input example</label>
+                    {{ form.file }}
+                    </input>            
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
